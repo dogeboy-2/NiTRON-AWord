@@ -1,0 +1,6 @@
+SaveFileWindow = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+frmSplash = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+OpenFileWindow = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+Form3 = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+Form2 = 0, 0, 0, 0, C, 26, 26, 601, 436, C
+Form1 = 0, 0, 0, 0, C, 0, 0, 0, 0, C
