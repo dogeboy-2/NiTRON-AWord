@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form Form3 
    BackColor       =   &H8000000E&
-   Caption         =   "开始"
+   Caption         =   "AWord·开始"
    ClientHeight    =   7935
    ClientLeft      =   120
    ClientTop       =   465

@@ -22,6 +22,23 @@ Begin VB.Form Form1
    ScaleWidth      =   12510
    WhatsThisHelp   =   -1  'True
    WindowState     =   2  'Maximized
+   Begin VB.Timer Timer2 
+      Left            =   4080
+      Top             =   1920
+   End
+   Begin RichTextLib.RichTextBox RTB2 
+      Height          =   135
+      Left            =   1800
+      TabIndex        =   9
+      Top             =   2520
+      Visible         =   0   'False
+      Width           =   495
+      _ExtentX        =   873
+      _ExtentY        =   238
+      _Version        =   393217
+      Enabled         =   -1  'True
+      TextRTF         =   $"AWord.frx":19D02
+   End
    Begin VB.CommandButton Command17 
       Caption         =   "打印"
       Height          =   495
@@ -78,7 +95,9 @@ Begin VB.Form Form1
       ScrollBars      =   3
       Appearance      =   0
       AutoVerbMenu    =   -1  'True
-      TextRTF         =   $"AWord.frx":19D02
+      OLEDragMode     =   0
+      OLEDropMode     =   1
+      TextRTF         =   $"AWord.frx":19D84
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "微软雅黑"
          Size            =   12
@@ -105,7 +124,7 @@ Begin VB.Form Form1
       ForeColor       =   &H80000008&
       Height          =   615
       Left            =   2470
-      Picture         =   "AWord.frx":19D93
+      Picture         =   "AWord.frx":19E15
       ScaleHeight     =   615
       ScaleWidth      =   615
       TabIndex        =   0
@@ -114,7 +133,7 @@ Begin VB.Form Form1
       Width           =   615
    End
    Begin VB.Line Line6 
-      BorderColor     =   &H80000006&
+      BorderColor     =   &H80000000&
       X1              =   120
       X2              =   2400
       Y1              =   2040
@@ -234,7 +253,7 @@ Begin VB.Form Form1
    Begin VB.Image Image2 
       Height          =   405
       Left            =   6490
-      Picture         =   "AWord.frx":1A4AC
+      Picture         =   "AWord.frx":1A52E
       Top             =   741
       Width           =   330
    End
@@ -242,14 +261,14 @@ Begin VB.Form Form1
       Appearance      =   0  'Flat
       Height          =   555
       Left            =   5900
-      Picture         =   "AWord.frx":1A86C
+      Picture         =   "AWord.frx":1A8EE
       Top             =   720
       Width           =   465
    End
    Begin VB.Image Command6 
       Height          =   600
       Left            =   320
-      Picture         =   "AWord.frx":1AC3C
+      Picture         =   "AWord.frx":1ACBE
       ToolTipText     =   "保存"
       Top             =   480
       Width           =   600
@@ -257,7 +276,7 @@ Begin VB.Form Form1
    Begin VB.Image Command14 
       Height          =   360
       Left            =   1495
-      Picture         =   "AWord.frx":1B42F
+      Picture         =   "AWord.frx":1B4B1
       ToolTipText     =   "重做"
       Top             =   760
       Width           =   360
@@ -265,7 +284,7 @@ Begin VB.Form Form1
    Begin VB.Image Command13 
       Height          =   360
       Left            =   1495
-      Picture         =   "AWord.frx":1B930
+      Picture         =   "AWord.frx":1B9B2
       ToolTipText     =   "撤消"
       Top             =   195
       Width           =   360
@@ -273,7 +292,7 @@ Begin VB.Form Form1
    Begin VB.Image Command16 
       Height          =   510
       Left            =   8580
-      Picture         =   "AWord.frx":1BE1F
+      Picture         =   "AWord.frx":1BEA1
       ToolTipText     =   "固定内容"
       Top             =   765
       Width           =   405
@@ -281,7 +300,7 @@ Begin VB.Form Form1
    Begin VB.Image Command15 
       Height          =   465
       Left            =   7840
-      Picture         =   "AWord.frx":1C2A5
+      Picture         =   "AWord.frx":1C327
       ToolTipText     =   "项目符号"
       Top             =   760
       Width           =   510
@@ -289,7 +308,7 @@ Begin VB.Form Form1
    Begin VB.Image Command12 
       Height          =   555
       Left            =   7140
-      Picture         =   "AWord.frx":1C763
+      Picture         =   "AWord.frx":1C7E5
       ToolTipText     =   "查找内容"
       Top             =   720
       Width           =   600
@@ -297,7 +316,7 @@ Begin VB.Form Form1
    Begin VB.Image Command11 
       Height          =   465
       Left            =   8500
-      Picture         =   "AWord.frx":1CBA2
+      Picture         =   "AWord.frx":1CC24
       ToolTipText     =   "右对齐"
       Top             =   180
       Width           =   465
@@ -305,7 +324,7 @@ Begin VB.Form Form1
    Begin VB.Image Command10 
       Height          =   495
       Left            =   7840
-      Picture         =   "AWord.frx":1CF96
+      Picture         =   "AWord.frx":1D018
       ToolTipText     =   "居中"
       Top             =   150
       Width           =   495
@@ -313,7 +332,7 @@ Begin VB.Form Form1
    Begin VB.Image Command9 
       Height          =   465
       Left            =   7220
-      Picture         =   "AWord.frx":1D3B6
+      Picture         =   "AWord.frx":1D438
       ToolTipText     =   "左对齐"
       Top             =   165
       Width           =   420
@@ -321,7 +340,7 @@ Begin VB.Form Form1
    Begin VB.Image Command8 
       Height          =   315
       Left            =   5430
-      Picture         =   "AWord.frx":1D7A5
+      Picture         =   "AWord.frx":1D827
       ToolTipText     =   "删除线"
       Top             =   840
       Width           =   420
@@ -329,7 +348,7 @@ Begin VB.Form Form1
    Begin VB.Image Command7 
       Height          =   510
       Left            =   4920
-      Picture         =   "AWord.frx":1DBB3
+      Picture         =   "AWord.frx":1DC35
       ToolTipText     =   "下划线"
       Top             =   760
       Width           =   375
@@ -337,7 +356,7 @@ Begin VB.Form Form1
    Begin VB.Image Command5 
       Height          =   360
       Left            =   4410
-      Picture         =   "AWord.frx":1DF24
+      Picture         =   "AWord.frx":1DFA6
       ToolTipText     =   "斜体"
       Top             =   840
       Width           =   360
@@ -345,21 +364,21 @@ Begin VB.Form Form1
    Begin VB.Image Command4 
       Height          =   360
       Left            =   3940
-      Picture         =   "AWord.frx":1E353
+      Picture         =   "AWord.frx":1E3D5
       Top             =   840
       Width           =   360
    End
    Begin VB.Image Command2 
       Height          =   360
       Left            =   3200
-      Picture         =   "AWord.frx":1E85A
+      Picture         =   "AWord.frx":1E8DC
       Top             =   220
       Width           =   360
    End
    Begin VB.Image Command3 
       Height          =   360
       Left            =   3200
-      Picture         =   "AWord.frx":1ED73
+      Picture         =   "AWord.frx":1EDF5
       ToolTipText     =   "剪切"
       Top             =   780
       Width           =   360
@@ -448,7 +467,8 @@ Option Explicit
 Dim bChg As Boolean '记录富文本框内容是否发生变化
 Dim UndoNum As Long
 Dim n As Long, chazhao As String
-      Private TargetPosition As Integer
+ Private TargetPosition As Integer
+      Public Ask As Boolean
 Private Sub Bold_Click()
 On Error Resume Next
 RichTextBox1.SelBold = Not RichTextBox1.SelBold
@@ -490,16 +510,6 @@ On Error Resume Next
 RichTextBox1.SelProtected = Not RichTextBox1.SelProtected
 End Sub
 
-Private Sub Command17_Click()
-Dim i As Integer
-Dim str As String
-str = (RichTextBox1.TextRTF)
-Printer.FontName = RichTextBox1.Font.Name
-Printer.FontSize = RichTextBox1.Font.Size
-Printer.Print str
-Printer.NewPage
-Printer.EndDoc
-End Sub
 Private Sub Command2_Click()
 Call mnuCopy_Click
 End Sub
@@ -519,6 +529,7 @@ Me.Caption = "AWord:" & RichTextBox1.FileName
 Else
 SaveFileWindow.Show
 End If
+Ask = False
 End Sub
 Private Sub Command7_Click()
 Call UnderLine_Click
@@ -690,6 +701,18 @@ Private Sub Combo1_KeyPress(KeyAscii As Integer) '回车键，需要改按钮
     RichTextBox1.SelFontName = (Combo1.text)
     End If
 End Sub
+
+
+
+
+Private Sub Timer2_Timer()
+If Not RichTextBox1.FileName = "" And Not RichTextBox1.FileName = "未命名" Then
+Me.Caption = "AWord:" & RichTextBox1.FileName & "- 已保存"
+Else
+Exit Sub
+End If
+End Sub
+
 Private Sub UnderLine_Click()
 On Error Resume Next
 RichTextBox1.SelUnderline = Not RichTextBox1.SelUnderline
@@ -735,6 +758,7 @@ webnet = VBA.Command
 If Not webnet = "" Then
 RichTextBox1.LoadFile webnet
 End If
+Ask = False
 End Sub
 Private Sub Combo2_KeyPress(KeyAscii As Integer) '回车键，需要改按钮
     On Error Resume Next
@@ -750,4 +774,33 @@ RichTextBox1.SelFontSize = (Combo2.text)
 RichTextBox1.Refresh
 Combo1.text = RichTextBox1.SelFontName
 Combo2.text = RichTextBox1.SelFontSize
+Ask = True
+RTB2.TextRTF = RichTextBox1.TextRTF
+RTB2.FileName = RichTextBox1.FileName
+If Not RichTextBox1.FileName = "" And Not RichTextBox1.FileName = "未命名" Then
+Me.Caption = "AWord:" & RichTextBox1.FileName & "- 正在保存"
+RTB2.SaveFile RichTextBox1.FileName
+Timer2.Enabled = True
+Timer2.Interval = 1000
+Ask = False
+Else
+Exit Sub
+End If
+End Sub
+Private Sub Form_Unload(Cancel As Integer)
+If Ask = True Then
+Dim Flag As Integer, MsgStr As String
+MsgStr = "文件已经改变，是否要保存？" '提示语
+Flag = MsgBox(MsgStr, vbYesNoCancel, "提示") '给予提示
+If Flag = vbYes Then
+Command6_Click
+Exit Sub
+End If
+If Flag = vbNo Then
+Exit Sub
+End If
+If Flag = vbCancel Then
+Cancel = True
+End If
+End If
 End Sub

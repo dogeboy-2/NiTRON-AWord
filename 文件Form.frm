@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form Form2 
    BackColor       =   &H8000000E&
-   Caption         =   "AWord"
+   Caption         =   "AWord·文件"
    ClientHeight    =   8070
    ClientLeft      =   120
    ClientTop       =   465
@@ -73,6 +73,16 @@ Begin VB.Form Form2
          Top             =   1080
          Width           =   1800
       End
+      Begin VB.Label Label3 
+         BackStyle       =   0  'Transparent
+         Caption         =   "宪逸"
+         Height          =   495
+         Left            =   10080
+         TabIndex        =   36
+         ToolTipText     =   "AuroraStudio的成员，提供了很多关于AWord的细节的反馈"
+         Top             =   2280
+         Width           =   2175
+      End
       Begin VB.Label Label11 
          BackColor       =   &H8000000E&
          Caption         =   "A"
@@ -99,7 +109,8 @@ Begin VB.Form Form2
          Height          =   495
          Left            =   10080
          TabIndex        =   30
-         Top             =   2280
+         ToolTipText     =   "AuroraStudio的成员，AWord 概念的创建者以及主要贡献者，为AWord的设计以及很多细节提供了很大的帮助！"
+         Top             =   2880
          Width           =   2175
       End
       Begin VB.Label Label9 
@@ -108,6 +119,7 @@ Begin VB.Form Form2
          Height          =   495
          Left            =   10080
          TabIndex        =   29
+         ToolTipText     =   "AuroraStudio的创建者，让AWord不再是个人作品"
          Top             =   1080
          Width           =   2085
       End
@@ -117,6 +129,7 @@ Begin VB.Form Form2
          Height          =   615
          Left            =   10080
          TabIndex        =   28
+         ToolTipText     =   "原INTRON软件组织的创建者，为最初的WinfansNotePad提供了组织"
          Top             =   1680
          Width           =   2535
       End
@@ -131,7 +144,7 @@ Begin VB.Form Form2
       End
       Begin VB.Label Label6 
          BackStyle       =   0  'Transparent
-         Caption         =   "  Preview 3 (UI and function packs)"
+         Caption         =   "  Preview 4 (UI and function packs)"
          BeginProperty Font 
             Name            =   "微软雅黑"
             Size            =   15
@@ -141,7 +154,7 @@ Begin VB.Form Form2
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1695
+         Height          =   495
          Left            =   2880
          TabIndex        =   25
          Top             =   3960
@@ -553,45 +566,63 @@ Begin VB.Form Form2
       TabIndex        =   0
       Top             =   0
       Width           =   2500
+      Begin VB.Label Label12 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         BackStyle       =   0  'Transparent
+         Caption         =   "打印"
+         Height          =   495
+         Left            =   1080
+         TabIndex        =   37
+         Top             =   5200
+         Width           =   1935
+      End
+      Begin VB.Image Image5 
+         Height          =   360
+         Left            =   480
+         Picture         =   "文件Form.frx":1EC73
+         Top             =   5180
+         Width           =   360
+      End
       Begin VB.Image Label4 
          Height          =   360
          Left            =   120
-         Picture         =   "文件Form.frx":1EC73
+         Picture         =   "文件Form.frx":1F167
          Top             =   9650
          Width           =   360
       End
       Begin VB.Image Image4 
          Height          =   360
          Left            =   480
-         Picture         =   "文件Form.frx":1F1AF
+         Picture         =   "文件Form.frx":1F6A3
          Top             =   4410
          Width           =   360
       End
       Begin VB.Image Image3 
          Height          =   360
          Left            =   480
-         Picture         =   "文件Form.frx":1F74E
+         Picture         =   "文件Form.frx":1FC42
          Top             =   2960
          Width           =   360
       End
       Begin VB.Image Image2 
          Height          =   360
          Left            =   480
-         Picture         =   "文件Form.frx":1FCA9
+         Picture         =   "文件Form.frx":2019D
          Top             =   2205
          Width           =   360
       End
       Begin VB.Image Image1 
          Height          =   360
          Left            =   480
-         Picture         =   "文件Form.frx":201C9
+         Picture         =   "文件Form.frx":206BD
          Top             =   1403
          Width           =   360
       End
       Begin VB.Image Picture2 
          Height          =   480
          Left            =   240
-         Picture         =   "文件Form.frx":206F2
+         Picture         =   "文件Form.frx":20BE6
          Top             =   360
          Width           =   480
       End
@@ -628,7 +659,7 @@ Begin VB.Form Form2
       Begin VB.Shape Shape1 
          BorderColor     =   &H80000016&
          FillColor       =   &H80000016&
-         Height          =   460
+         Height          =   350
          Left            =   220
          Top             =   1200
          Visible         =   0   'False
@@ -702,6 +733,7 @@ Picture5.Visible = False
 Picture6.Visible = True
 Picture7.Visible = False
 End If
+Ask = False
 End Sub
 Private Sub Form_Resize()
     Picture1.Height = Form2.Height
@@ -719,11 +751,31 @@ Command5_Click
 End Sub
 
 Private Sub Image5_Click()
-
+On Error Resume Next
+Dim i As Integer
+Dim str As String
+str = (RichTextBox1.TextRTF)
+Printer.FontName = RichTextBox1.Font.Name
+Printer.FontSize = RichTextBox1.Font.Size
+Printer.Print str
+Printer.NewPage
+Printer.EndDoc
 End Sub
 
 Private Sub Label11_Click()
 Text5.Visible = True
+End Sub
+
+Private Sub Label12_Click()
+On Error Resume Next
+Dim i As Integer
+Dim str As String
+str = (RichTextBox1.TextRTF)
+Printer.FontName = RichTextBox1.Font.Name
+Printer.FontSize = RichTextBox1.Font.Size
+Printer.Print str
+Printer.NewPage
+Printer.EndDoc
 End Sub
 
 Private Sub Label2_Click()
@@ -747,6 +799,10 @@ End If
 Picture7.Visible = Not Picture7.Visible
 Picture5.Visible = False
 Picture6.Visible = False
+End Sub
+
+Private Sub Label6_Click()
+MsgBox "2023年整到Preview 4!"
 End Sub
 
 Private Sub Picture2_Click()

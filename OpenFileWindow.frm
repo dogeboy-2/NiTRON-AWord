@@ -79,7 +79,7 @@ Begin VB.Form OpenFileWindow
       Height          =   375
       Left            =   6000
       TabIndex        =   4
-      Text            =   "*.fns"
+      Text            =   "*.doc"
       Top             =   4440
       Width           =   2295
    End
@@ -163,7 +163,7 @@ Begin VB.Form OpenFileWindow
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   720
+      Left            =   480
       TabIndex        =   8
       Top             =   5160
       Width           =   4455

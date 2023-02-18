@@ -95,7 +95,7 @@ Begin VB.Form SaveFileWindow
          Strikethrough   =   0   'False
       EndProperty
       Height          =   495
-      Left            =   6600
+      Left            =   6750
       TabIndex        =   3
       Top             =   5160
       Width           =   1575

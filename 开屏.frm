@@ -6,6 +6,7 @@ Begin VB.Form frmSplash
    ClientTop       =   3390
    ClientWidth     =   7200
    ClipControls    =   0   'False
+   FillStyle       =   2  'Horizontal Line
    Icon            =   "¿ªÆÁ.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form2"
@@ -117,9 +118,6 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Private Sub Form_KeyPress(KeyAscii As Integer)
-    Unload Me
-End Sub
 Private Sub Form_Load()
     Timer1.Enabled = True
     Timer1.Interval = 800
